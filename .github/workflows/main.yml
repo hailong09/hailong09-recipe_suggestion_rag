@@ -15,7 +15,7 @@ jobs:
       run: echo ${{ secrets.DOCKERHUB_ACCESS_TOKEN }} | docker login -u ${{ vars.DOCKERHUB_USERNAME }} --password-stdin
 
     - name: Build and push Docker image
-      run: docker build . --file Dockerfile --tag ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DH_REPO_NAME }}:latest | docker push .
+      run: docker build . --file Dockerfile --tag ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DH_REPO_NAME }}:latest  --push
 
 
 
