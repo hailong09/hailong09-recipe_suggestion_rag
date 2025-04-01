@@ -21,8 +21,8 @@ jobs:
       run: |
         docker buildx create --user
         docker buildx build \
-          --file Dockerfile ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DH_REPO_NAME }}:latest \
-          --tag
+          --file Dockerfile \
+          --tag ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DH_REPO_NAME }}:latest \
           --push .
 
 
